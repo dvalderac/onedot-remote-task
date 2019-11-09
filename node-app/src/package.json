@@ -1,0 +1,13 @@
+{
+  "name": "helloworld_app",
+  "version": "1.0.0",
+  "description": "Hello World! Node.js app on Docker",
+  "author": "Daniel Valdera <danvalcar.teleco@gmail.com>",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}

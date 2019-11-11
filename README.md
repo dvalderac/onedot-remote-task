@@ -2,6 +2,7 @@
 Proposed solution for the remote task required as part of my application for the Devops Engineer Intern position at Onedot.
 
 Description of the task:
+
 We are going to take a basic Node.js example application and deploy it on AWS using Cloudformation. The goal is to deploy the Node.js
 application in a scalable way behind a load balancer. From now on, we will call the mock web application 'helloworld-node-app'
 

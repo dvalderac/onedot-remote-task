@@ -26,6 +26,7 @@ a Swarm cluster infrastructure (vía CLI)
 - Run this command 
 (the template can be found in this repo - Docker4AWS-cloudformation-template/DockerStack-cloudformation.json 
 or just in the official Docker for AWS site)
+
 $ aws cloudformation create-stack --stack-name teststack 
 --template-url <templateurl> --parameters ParameterKey=<keyname>,
 ParameterValue=<keyvalue> ParameterKey=InstanceType,ParameterValue=t2.micro 

@@ -24,6 +24,7 @@ a Swarm cluster infrastructure (vía CLI)
 - Create and configure your AWS free tier account 
 - Configure aws CLI in your worstation
 - Run this command (enter your desired values to configure the cluster)
+
 (the template can be found in this repo - Docker4AWS-cloudformation-template/DockerStack-cloudformation.json 
 or just in the official Docker for AWS site)
 

@@ -32,13 +32,21 @@ $ aws cloudformation create-stack --stack-name teststack
 --template-url <templateurl> --parameters ParameterKey=<keyname>,
 ParameterValue=<keyvalue> ParameterKey=InstanceType,ParameterValue=t2.micro 
 ParameterKey=ManagerInstanceType,ParameterValue=t2.micro ParameterKey=ClusterSize,ParameterValue=1 .... --capabilities CAPABILITY_IAM
+
 - Secure copy the docker-compose-AWS-deployment.yml file to the swarm manager node:
+
 $ scp -i <yourkeypair.pem> docker-compose-AWS-deployment.yml docker@<ManagerPublicIP>:
+
 - Secure login to the swarm manager node:
+
 $ ssh -i <yourkeypair.pem> docker@<managerPublicIP>
+
 - Deploy the web node app as a docker stack
+
 $ docker stack deploy --compose-file docker-compose-AWS-deployment.yml helloworld-node-app
+
 - Explicitly expose the services ports by updating port mappings
+
 $ docker service update –publish-add published=80,target=8080 helloworld-node-app
 - Use docker, docker node, docker swarm and docker service commands to manage the cluster and scale the services.
 

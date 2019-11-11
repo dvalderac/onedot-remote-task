@@ -1,0 +1,32 @@
+version: '3.2'
+services:
+  backend1:
+      container_name:  node-app1
+      image: dvalderac/helloworld_backend1
+      ports:
+          - "8081:8080"
+      deploy:
+          replicas: 2
+          restart_policy:
+              condition: on-failure           
+  backend2:
+      container_name: node-app2
+      image: dvalderac/helloworld_backend1
+      ports:
+          - "8082:8080"
+      deploy:
+          replicas: 2
+          restart_policy:
+              condition: on-failure 
+  loadbalancer:
+      container_name: nginx-lb
+      image: dvalderac/nginx-loadbalancer
+      ports:
+          - "8080:80" 
+      deploy:
+          replicas: 2
+          restart_policy:
+              condition: on-failure
+      links:
+          - backend1
+          - backend2
